@@ -1,0 +1,19 @@
+{
+  "name": "liatrio_exercise",
+  "version": "1.0.0",
+  "description": "Web Application for my liatrio interview",
+  "main": "main.js",
+  "scripts": {
+    "test": "pytest .\\test.py -sv --html report.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/redins1/liatrio_exercise.git"
+  },
+  "author": "Philip Snider",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redins1/liatrio_exercise/issues"
+  },
+  "homepage": "https://github.com/redins1/liatrio_exercise#readme"
+}
