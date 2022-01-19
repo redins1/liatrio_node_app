@@ -10,7 +10,7 @@ COPY package*.json ./
 
 RUN npm install
 
-COPY . .
+COPY /var/jenkins_home/workspace/node-docker-build /opt/node/app
 
 EXPOSE 3000
 
