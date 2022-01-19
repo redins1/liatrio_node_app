@@ -1,7 +1,7 @@
 // Command: node .\main.js
 var http = require('http');
 const PORT = 3000;
-const HOST = 'localhost';
+const HOST = '0.0.0.0';
 let time = Date.now();
 var seconds = time / 1000
 
