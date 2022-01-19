@@ -22,9 +22,9 @@ pipeline {
     stage('Docker push') {
       agent any
       steps {
-	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 389566217404.dkr.ecr.us-east-1.amazonaws.com
-        docker tag liatrio_exercise:latest 389566217404.dkr.ecr.us-east-1.amazonaws.com/liatrio_exercise:latest
-        docker push 389566217404.dkr.ecr.us-east-1.amazonaws.com/liatrio_exercise:latest
+	sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 389566217404.dkr.ecr.us-east-1.amazonaws.com'
+        sh 'docker tag liatrio_exercise:latest 389566217404.dkr.ecr.us-east-1.amazonaws.com/liatrio_exercise:latest'
+        sh 'docker push 389566217404.dkr.ecr.us-east-1.amazonaws.com/liatrio_exercise:latest'
       }
     }
   }
