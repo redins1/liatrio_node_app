@@ -19,5 +19,13 @@ pipeline {
         sh 'docker build -t liatrio_exercise .'
       }
     }
+    stage('Docker push') {
+      agent any
+      steps {
+        docker.withRegistry('https://ec2-3-231-42-49.compute-1.amazonaws.com', 'ecr:us-east-1:redins') {
+        docker.image('liatrio_exercise').push('latest')
+        }
+      }
+    }
   }
 }
