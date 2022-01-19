@@ -22,8 +22,9 @@ pipeline {
     stage('Docker push') {
       agent any
       steps {
-        docker.withRegistry('https://ec2-3-231-42-49.compute-1.amazonaws.com', 'ecr:us-east-1:redins') {
-        docker.image('liatrio_exercise').push('latest')
+	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 389566217404.dkr.ecr.us-east-1.amazonaws.com
+        docker tag liatrio_exercise:latest 389566217404.dkr.ecr.us-east-1.amazonaws.com/liatrio_exercise:latest
+        docker push 389566217404.dkr.ecr.us-east-1.amazonaws.com/liatrio_exercise:latest
         }
       }
     }
