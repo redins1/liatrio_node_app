@@ -3,7 +3,7 @@
 pipeline {
   agent none
   stages {
-    stage('Node Install') {
+    stage('Node Install Works') {
       agent {
         docker {
           image 'node:16'
